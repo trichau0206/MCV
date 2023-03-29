@@ -1,5 +1,3 @@
-
-
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 const sequelize = require('../../config/connection');
@@ -27,8 +25,7 @@ router.get('/', (req, res) => {
                         model: User,
                         attributes: ['username']
                     }
-                }
-            ]
+                }]
         })
         .then(dbPostData => res.json(dbPostData.reverse()))
         .catch(err => {
@@ -58,8 +55,7 @@ router.get('/:id', (req, res) => {
                         model: User,
                         attributes: ['username']
                     }
-                }
-            ]
+                }]
         })
         .then(dbPostData => {
             if (!dbPostData) {
